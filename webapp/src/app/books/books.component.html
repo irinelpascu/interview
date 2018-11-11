@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <span>Books</span>
+  <button mat-raised-button color="accent" (click)="onLogout()">Logout</button>
+</mat-toolbar>
+<mat-card class="search-fields">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Author" [formControl]="authorFormControl">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Title" [formControl]="titleFormControl">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Language" [formControl]="languageFormControl">
+  </mat-form-field>
+</mat-card>
+<div class="books-header">
+  <span (click)="onSortClick('author')"><i *ngIf="getSortBy() === 'author'" [ngClass]="getSortDirection()" class="material-icons">filter_list</i>author</span>
+  <span (click)="onSortClick('title')"><i *ngIf="getSortBy() === 'title'" [ngClass]="getSortDirection()" class="material-icons">filter_list</i>title</span>
+  <span (click)="onSortClick('year')"><i *ngIf="getSortBy() === 'year'" [ngClass]="getSortDirection()" class="material-icons">filter_list</i>year</span>
+  <span (click)="onSortClick('pages')"><i *ngIf="getSortBy() === 'pages'" [ngClass]="getSortDirection()" class="material-icons">filter_list</i>pages</span>
+  <span (click)="onSortClick('language')"><i *ngIf="getSortBy() === 'language'" [ngClass]="getSortDirection()" class="material-icons">filter_list</i>language</span>
+  <span (click)="onSortClick('country')"><i *ngIf="getSortBy() === 'country'" [ngClass]="getSortDirection()" class="material-icons">filter_list</i>country</span>
+</div>
+<div #scrollContainer class="books-list"
+  infiniteScroll
+  [infiniteScrollContainer]="scrollContainer"
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()">
+  <a *ngFor="let book of books$ | async; trackBy: trackByFunction" [routerLink]="['/book/' + book.id]">
+    <app-book-item [book]="book" [isAdmin]="isAdmin()" (delete)="onDeleteClick($event)"></app-book-item>
+  </a>
+</div>
+<a [routerLink]="['/book/new']"><button mat-fab color="primary"><i class="material-icons">add</i></button></a>

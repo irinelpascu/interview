@@ -1,0 +1,26 @@
+@import "../../style/variables";
+
+:host {
+  display: block;
+  height: 100vh;
+  background-color: $gray;
+}
+
+mat-card {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

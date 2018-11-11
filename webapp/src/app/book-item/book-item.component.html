@@ -1,0 +1,44 @@
+<mat-card>
+  <img [src]="book.imageLink" width="60px">
+  <dl class="column-s">
+    <div>
+      <dt>Author:</dt>
+      <dd>{{book.author}}</dd>
+    </div>
+    <div>
+      <dt>Title:</dt>
+      <dd>{{book.title}}</dd>
+    </div>
+    <div>
+      <dt>Year:</dt>
+      <dd>{{book.year}}</dd>
+    </div>
+    <div>
+      <dt>Pages:</dt>
+      <dd>{{book.pages}}</dd>
+    </div>
+    <div>
+      <dt>Language:</dt>
+      <dd>{{book.language}}</dd>
+    </div>
+  </dl>
+  <dl class="column-l">
+    <div>
+      <dt>Country:</dt>
+      <dd>{{book.country}}</dd>
+    </div>
+    <div>
+      <dt>Added on:</dt>
+      <dd>{{book.createdAt}}</dd>
+    </div>
+    <div>
+      <dt>Last updated:</dt>
+      <dd>{{book.updatedAt}}</dd>
+    </div>
+    <div>
+      <dt>Link:</dt>
+      <dd>{{book.link}}</dd>
+    </div>
+  </dl>
+  <i *ngIf="isAdmin" class="material-icons" (click)="onDeleteClick($event)">delete</i>
+</mat-card>

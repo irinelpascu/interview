@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <span>Books</span>
+  <div>
+    <button mat-button color="accent" (click)="onBack()">Back</button>
+    <button mat-raised-button color="accent" (click)="onLogout()">Logout</button>
+  </div>
+</mat-toolbar>
+<form [formGroup]="formGroup" (submit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Author" formControlName="author" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Country" formControlName="country" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="ImageLink" formControlName="imageLink" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Language" formControlName="language" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Link" formControlName="link" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Pages" formControlName="pages" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Title" formControlName="title" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Year" formControlName="year" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!formGroup.valid">Save</button>
+</form>

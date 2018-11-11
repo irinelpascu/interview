@@ -1,0 +1,30 @@
+@import "../../style/variables";
+
+:host {
+  display: block;
+  height: 100vh;
+  background-color: $gray;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-toolbar button {
+  margin-left: 12px;
+}
+
+form {
+  width: 900px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-right: 24px;
+}

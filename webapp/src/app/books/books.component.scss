@@ -1,0 +1,82 @@
+@import "../../style/variables";
+
+:host {
+  display: block;
+  height: 100vh;
+  background-color: $gray;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-card.search-fields {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card.search-fields > mat-form-field {
+  margin: 0 12px;
+}
+
+.books-header {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 24px auto;
+  padding: 0 24px;
+}
+
+.books-header > span {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.books-header > span:hover {
+  background-color: $gray-dark;
+}
+
+.books-header > span > i {
+  transition: all .2s ease-in-out;
+}
+
+i.ASC {
+  transform: rotate(180deg);
+}
+
+i.DESC {
+  transform: rotate(0deg);
+}
+
+.books-list {
+  width: 90%;
+  height: calc(100% - 274px);
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.books-item {
+  display: flex;
+}
+
+.books-item:hover {
+  background-color: $gray-dark;
+}
+
+.books-item > span {
+  flex: 1;
+}
+
+a {
+  color: $font-color;
+  text-decoration: none;
+}
+
+button[mat-fab] {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}

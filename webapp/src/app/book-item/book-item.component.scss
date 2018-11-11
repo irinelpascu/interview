@@ -1,0 +1,39 @@
+@import "../../style/variables";
+
+:host {
+  display: block;
+}
+
+mat-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid $gray;
+}
+
+dl {
+  margin: 0 0 0 24px;
+}
+
+dl > div {
+  display: flex;
+  border-bottom: 1px solid $gray;
+  height: 18px;
+  margin-right: 24px;
+}
+
+dt {
+  width: 100px;
+}
+
+dd {
+  margin-left: 12px;
+}
+
+.column-s {
+  width: 400px;
+}
+
+.column-l {
+  flex: 1;
+}
