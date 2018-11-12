@@ -11,6 +11,11 @@
 
 To create the users run `mongo library createAdmin.js` and `mongo library createUser.js` in the server folder
 
+These commands will add 2 users to the database:
+
+1. `username: admin, password: admin`
+2. ` username: user, password: 12345`
+
 ## Prerequisites
 * MongoDB
 * Maven
