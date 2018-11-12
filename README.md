@@ -6,6 +6,7 @@
 * Run `mvn spring-boot:run` to run the REST service, or by `Application.class` in an IDE, or by `mvn clean install`, `java -jar target/*.jar` in the server folder. Keep this terminal window open while running the application
 * Run `npm install` in the webapp folder to install web application dependencies
 * Run `npm start` in the webapp folder to run the web application. Keep this terminal window open while running the application
+* Open a browser window at [localhost:4200](https://localhost:4200)
 
 ## Creating db users
 
