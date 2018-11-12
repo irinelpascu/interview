@@ -1,0 +1,437 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Canoo",
+		"_postman_id": "8ed2dd37-4074-37d4-31d7-edf7f30e0cc2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"token\", jsonData.token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/api/auth",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "38c6dd58-c975-4841-b2a7-1f782526f795",
+					"name": "getToken",
+					"originalRequest": {
+						"url": "http://localhost:8080/api/auth",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "access-control-allow-headers",
+							"key": "access-control-allow-headers",
+							"value": "x-auth-token, Content-Type",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"name": "access-control-allow-methods",
+							"key": "access-control-allow-methods",
+							"value": "POST, GET, PUT, OPTIONS, DELETE, PATCH",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"name": "access-control-allow-origin",
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "access-control-expose-headers",
+							"key": "access-control-expose-headers",
+							"value": "x-auth-token, Content-Type",
+							"description": "Lets a server whitelist headers that browsers are allowed to access."
+						},
+						{
+							"name": "access-control-max-age",
+							"key": "access-control-max-age",
+							"value": "3600",
+							"description": "Indicates how long the results of a preflight request can be cached in seconds."
+						},
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Fri, 09 Nov 2018 13:06:28 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-frame-options",
+							"key": "x-frame-options",
+							"value": "DENY",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 610,
+					"body": "{\"token\":\"eyJhbGciOiJIUzUxMiJ9.eyJjbGllbnRUeXBlIjoidXNlciIsInRva2VuX2V4cGlyYXRpb25fZGF0ZSI6MTU0MTc3MDU4ODEzMiwidXNlcklEIjoiNWJlNTg1YWE0NzI0OTViNWJmMzMyZGIyIiwidXNlcm5hbWUiOiJ1c2VyIiwidG9rZW5fY3JlYXRlX2RhdGUiOnsiZGF5T2ZNb250aCI6OSwiZGF5T2ZXZWVrIjoiRlJJREFZIiwieWVhciI6MjAxOCwibW9udGgiOiJOT1ZFTUJFUiIsImhvdXIiOjE1LCJtaW51dGUiOjYsInNlY29uZCI6MjgsIm5hbm8iOjEzMTAwMDAwMCwibW9udGhWYWx1ZSI6MTEsImRheU9mWWVhciI6MzEzLCJjaHJvbm9sb2d5Ijp7ImlkIjoiSVNPIiwiY2FsZW5kYXJUeXBlIjoiaXNvODYwMSJ9fX0.BV6J_F64fmH4zK7vVaG9Ra5aMWubXQbwb7RNsHWsVvEOT_l72jQchUztAij60XW0kqF1afNX1msWLuDn-yylPg\"}"
+				}
+			]
+		},
+		{
+			"name": "signup",
+			"request": {
+				"url": "http://localhost:8080/api/signup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "hello",
+			"request": {
+				"url": "http://localhost:8080/api/hello",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "addBook",
+			"request": {
+				"url": "http://localhost:8080/api/books",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"author\": \"Chinua Achebe\",\n\t\"country\": \"Nigeria\",\n\t\"imageLink\": \"images/things-fall-apart.jpg\",\n\t\"language\": \"English\",\n\t\"link\": \"https://en.wikipedia.org/wiki/Things_Fall_Apart\",\n\t\"pages\": 209,\n\t\"title\": \"Things Fall Apart\",\n\t\"year\": 1958\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"url": "http://localhost:8080/api/books",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5be5a3a4472495b90a922383\",\n\t\"author\": \"Chinua Achebe\",\n\t\"country\": \"Nigeria\",\n\t\"imageLink\": \"images/things-fall-apart.jpg\",\n\t\"language\": \"Deutsch\",\n\t\"link\": \"https://en.wikipedia.org/wiki/Things_Fall_Apart\\n\",\n\t\"pages\": 209,\n\t\"title\": \"Things Fall Apart\",\n\t\"year\": 1958\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getBooks",
+			"request": {
+				"url": "http://localhost:8080/api/books",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"author\": \"Chinua Achebe\",\n\t\"country\": \"Nigeria\",\n\t\"imageLink\": \"images/things-fall-apart.jpg\",\n\t\"language\": \"English\",\n\t\"link\": \"https://en.wikipedia.org/wiki/Things_Fall_Apart\\n\",\n\t\"pages\": 209,\n\t\"title\": \"Things Fall Apart\",\n\t\"year\": 1958\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "searchBooks",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/api/books?author&language=german&title&page=0&pageSize=10&sortDirection=ASC&sortBy=title",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "",
+							"equals": false,
+							"description": ""
+						},
+						{
+							"key": "language",
+							"value": "german",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "title",
+							"value": "",
+							"equals": false,
+							"description": ""
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pageSize",
+							"value": "10",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "sortDirection",
+							"value": "ASC",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "sortBy",
+							"value": "title",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"author\": \"Chinua Achebe\",\n\t\"country\": \"Nigeria\",\n\t\"imageLink\": \"images/things-fall-apart.jpg\",\n\t\"language\": \"English\",\n\t\"link\": \"https://en.wikipedia.org/wiki/Things_Fall_Apart\\n\",\n\t\"pages\": 209,\n\t\"title\": \"Things Fall Apart\",\n\t\"year\": 1958\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getBook",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/api/books?id=5be5a3a4472495b90a922383",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5be5a3a4472495b90a922383",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"author\": \"Chinua Achebe\",\n\t\"country\": \"Nigeria\",\n\t\"imageLink\": \"images/things-fall-apart.jpg\",\n\t\"language\": \"English\",\n\t\"link\": \"https://en.wikipedia.org/wiki/Things_Fall_Apart\\n\",\n\t\"pages\": 209,\n\t\"title\": \"Things Fall Apart\",\n\t\"year\": 1958\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/api/books?id=5be5a3a4472495b90a922383",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5be5a3a4472495b90a922383",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

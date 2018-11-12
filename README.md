@@ -21,4 +21,7 @@ These commands will add 2 users to the database:
 * Maven
 * Node and NPM
 
-You can install the prerequisites with Homebrew by running `brew install maven`, `brew install mongodb`, `brew install node` and running `sudo chown -R 'id -un' /data/db` to create the db folder root for MongoDB 
+You can install the prerequisites with Homebrew by running `brew install maven`, `brew install mongodb`, `brew install node` and running `sudo chown -R 'id -un' /data/db` to create the db folder root for MongoDB
+
+## Extra
+Postman REST API requests collection available in the `library.postman_collection` file of the server folder. Import this folder in Postman to test the REST API requests
