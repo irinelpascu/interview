@@ -2,10 +2,10 @@
 
 ## Running
 * Download this repository
-* Run `mongod` in a terminal window to start the MongoDB service/daemon
-* Run `mvn spring-boot:run` to run the REST service, or by `Application.class` in an IDE, or by `mvn clean install`, `java -jar target/*.jar` in the server folder
+* Run `mongod` in a terminal window to start the MongoDB service/daemon. Keep this terminal window open while running the application
+* Run `mvn spring-boot:run` to run the REST service, or by `Application.class` in an IDE, or by `mvn clean install`, `java -jar target/*.jar` in the server folder. Keep this terminal window open while running the application
 * Run `npm install` in the webapp folder to install web application dependencies
-* Run `npm start` in the webapp folder to run the web application
+* Run `npm start` in the webapp folder to run the web application. Keep this terminal window open while running the application
 
 ## Creating db users
 
